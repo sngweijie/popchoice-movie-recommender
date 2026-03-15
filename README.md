@@ -2,6 +2,10 @@
 
 PopChoice is a multi-user movie recommendation app where each person shares preferences, the answers are combined into one sentiment profile, and the app returns top movie picks with poster/details.
 
+## Live Demo
+
+- https://popchoice-movie-recommender.pages.dev
+
 This project showcases:
 
 - multi-user frontend flow with dynamic recommendation cards
