@@ -1,0 +1,32 @@
+{
+  "name": "Scrim-s05qo7r",
+  "description": "https://scrimba.com/the-ai-engineer-path-c02v/~023/s01uvqsg48/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "seed": "node scripts/seed-movies.js",
+    "seed:content": "node scripts/seed-content.js",
+    "server": "node server/index.js",
+    "worker:dev": "wrangler dev",
+    "worker:check": "wrangler deploy --dry-run",
+    "worker:deploy": "wrangler deploy"
+  },
+  "type": "module",
+  "dependencies": {
+    "@langchain/textsplitters": "^0.1.0",
+    "@supabase/supabase-js": "2.38.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "openai": "4.12.3",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "wrangler": "^4.39.0"
+  },
+  "overrides": {
+    "langsmith": ">=0.4.6"
+  }
+}

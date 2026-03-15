@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PopChoice - Movie Recommendations</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .popchoice-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+  </style>
+<style data-purpose="layout-colors">
+    :root {
+      --bg-navy: #000821;
+      --card-bg: #2c345a;
+      --accent-green: #58e38d;
+    }
+    body {
+      background-color: var(--bg-navy);
+      color: white;
+    }
+    .bg-navy { background-color: var(--bg-navy); }
+    .bg-card { background-color: var(--card-bg); }
+    .bg-accent { background-color: var(--accent-green); }
+    .text-accent { color: var(--accent-green); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 md:p-8">
+<!-- BEGIN: MainContainer -->
+<main class="w-full max-w-md mx-auto flex flex-col gap-8">
+<!-- BEGIN: MainHeader -->
+<header class="flex flex-col items-center gap-2 pt-8" data-purpose="app-branding">
+<div class="text-6xl mb-2">
+<!-- Representation of the cute popcorn bucket emoji -->
+        🍿
+      </div>
+<h1 class="popchoice-logo text-5xl italic text-white">PopChoice</h1>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: QuestionsView -->
+<section class="flex flex-col gap-6" data-purpose="user-input-form" id="questions-view">
+<!-- Question 1 -->
+<div class="flex flex-col gap-3">
+<label class="text-lg font-medium px-1" for="fav-movie">What's your favorite movie and why?</label>
+<textarea class="bg-card border-none rounded-xl p-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-400 resize-none w-full" id="fav-movie" placeholder="e.g. The Shawshank Redemption because it taught me to never give up hope..." rows="3"></textarea>
+</div>
+<!-- Question 2 -->
+<div class="flex flex-col gap-3">
+<label class="text-lg font-medium px-1" for="mood-timing">Are you in the mood for something new or a classic?</label>
+<textarea class="bg-card border-none rounded-xl p-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-400 resize-none w-full" id="mood-timing" placeholder="e.g. I want to watch movies that were released after 1990" rows="3"></textarea>
+</div>
+<!-- Question 3 -->
+<div class="flex flex-col gap-3">
+<label class="text-lg font-medium px-1" for="vibe">Do you wanna have fun or do you want something serious?</label>
+<textarea class="bg-card border-none rounded-xl p-4 text-white placeholder-gray-400 focus:ring-2 focus:ring-green-400 resize-none w-full" id="vibe" placeholder="e.g. I want to watch something stupid and fun" rows="3"></textarea>
+</div>
+<button class="bg-accent text-black font-bold text-2xl py-5 rounded-xl mt-4 hover:opacity-90 transition-opacity active:scale-[0.98]" id="btn-submit">
+        Let's Go
+      </button>
+</section>
+<!-- END: QuestionsView -->
+<!-- BEGIN: MovieOutputView -->
+<section class="hidden flex flex-col gap-8 text-center animate-in fade-in duration-500" data-purpose="recommendation-result" id="output-view">
+<div class="flex flex-col gap-4">
+<h2 class="text-4xl font-extrabold leading-tight" id="movie-title"></h2>
+<p class="text-lg text-gray-200 leading-relaxed px-2" id="movie-description"></p>
+</div>
+<button class="bg-accent text-black font-bold text-2xl py-5 rounded-xl mt-4 hover:opacity-90 transition-opacity active:scale-[0.98]" id="btn-restart">
+        Go Again
+      </button>
+</section>
+<!-- END: MovieOutputView -->
+<!-- BEGIN: LoadingState -->
+<div class="hidden flex flex-col items-center justify-center py-12" id="loading-view">
+<div class="animate-bounce text-accent text-4xl">🍿</div>
+<p class="mt-4 text-xl font-medium">Finding the perfect flick...</p>
+</div>
+<!-- END: LoadingState -->
+</main>
+<!-- END: MainContainer -->
+<script type="module" src="/index.js"></script>
+</body>
+</html>
