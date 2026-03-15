@@ -5,6 +5,7 @@ PopChoice is a multi-user movie recommendation app where each person shares pref
 ## Live Demo
 
 - https://popchoice-movie-recommender.pages.dev
+- Note: access may be restricted by Cloudflare Access policy (authorized emails only).
 
 This project showcases:
 
